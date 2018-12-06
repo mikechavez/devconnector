@@ -37,6 +37,22 @@ router.get(
   }
 );
 
+// @route     GET api/profile/all
+// @desc      GET all profiles
+// @access    Public
+router.get("/all", (req, res) => {
+  Profile.find()
+    .populate("user", ["name", "avatar"])
+    .then(profiles => {
+      if (!profiles) {
+        errors.noprofile = "There are no profiles";
+        return res.status(404).json(errors);
+      }
+      res.json(profiles);
+    })
+    .catch(err => res.status(404).json({ profile: "There are no profiles" }));
+});
+
 // @route     GET api/profile/handle/:handle
 // @desc      GET profile by handle
 // @access    Public
