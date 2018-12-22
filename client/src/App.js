@@ -75,6 +75,13 @@ class App extends Component {
               <Switch>
                 <PrivateRoute
                   exact
+                  path="/add-experience"
+                  component={AddExperience}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
                   path="/add-education"
                   component={AddEducation}
                 />
