@@ -74,14 +74,14 @@ class AddExperience extends Component {
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
-                  placeholder="Company"
+                  placeholder="* Company"
                   name="company"
                   value={this.state.company}
                   onChange={this.onChange}
                   error={errors.company}
                 />
                 <TextFieldGroup
-                  placeholder="Job Title"
+                  placeholder="* Job Title"
                   name="title"
                   value={this.state.title}
                   onChange={this.onChange}
